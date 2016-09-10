@@ -1,0 +1,23 @@
+import java.util.Scanner;
+import java.util.regex.*;
+
+public class indexgen {
+
+	public static void main(String[] args) {
+		Scanner sc = new Scanner (System.in);
+		String line = "";
+		String file = "";
+		while (!line.equals("**")){
+			line = sc.nextLine();
+			file+=line;
+		}
+		String pattern = "/(\\&|\\*|\\{.*?\\})/g";
+		Pattern r = Pattern.compile(pattern);
+		Matcher m = r.matcher(file);
+		if (m.find()){
+			System.out.println(m.group(0));
+		} else {
+	         System.out.println("NO MATCH");
+	    }
+	}
+}

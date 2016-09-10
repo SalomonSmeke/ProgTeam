@@ -1,0 +1,22 @@
+import java.util.Scanner;
+
+public class Hangover {
+	public static void main(String[] args) {
+		@SuppressWarnings("resource")
+		Scanner sc = new Scanner(System.in);
+		
+		float val = sc.nextFloat();
+		while (val != 0) {
+			float attained = 0;
+			int cards = 1;
+			while (attained < val){
+				attained = attained + 1 / (cards+1);
+				cards++;
+				System.out.println(attained);
+			}
+			System.out.println(cards);
+			val = sc.nextFloat();
+		}
+		
+	}
+}

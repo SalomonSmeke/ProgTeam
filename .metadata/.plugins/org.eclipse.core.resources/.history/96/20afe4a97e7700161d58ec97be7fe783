@@ -1,0 +1,37 @@
+import java.util.ArrayList;
+import java.util.Scanner;
+import java.util.regex.*;
+
+public class indexgen {
+
+	public static void main(String[] args) {
+		Scanner sc = new Scanner (System.in);
+		String line = "";
+		String file = sc.nextLine();
+		while (!line.equals("**")){
+			file += line;
+			line = sc.nextLine();	
+		}
+		String pattern = "(\\&|\\*|\\{.*?\\})";
+		
+		Pattern r = Pattern.compile(pattern);
+		Matcher m = r.matcher(file);
+
+		ArrayList <ArrayList<String>> documents = new ArrayList<>();
+		documents.add(new ArrayList<String>());
+		int document = 0;
+		while (m.find()){
+			line = m.group(0);
+			if (line.equals("*")){
+				document++;
+				documents.add(new ArrayList<String>());
+			} else {
+				documents.get(document).add(line);
+			}
+		}
+		
+		for (int i = 0; i < documents.size()-1; i++){
+			System.out.println("DOCUMENT " + i+1);
+		}
+	}
+}

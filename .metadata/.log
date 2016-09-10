@@ -1,0 +1,18 @@
+
+!ENTRY org.eclipse.epp.logging.aeri.ide 2 10 2016-09-10 09:57:13.774
+!MESSAGE Updating the index from remote failed. ; version: 1.100.0.v20160217-0435
+!STACK 0
+java.lang.RuntimeException: java.io.FileNotFoundException: /Users/salomon/Documents/ProgTeam/.metadata/.plugins/org.eclipse.epp.logging.aeri.ide/org.eclipse.epp.logging.aeri.ide.server/server-config.json (No such file or directory)
+	at com.google.common.base.Throwables.propagate(Throwables.java:160)
+	at org.eclipse.epp.internal.logging.aeri.ide.server.json.Json.serialize(Json.java:130)
+	at org.eclipse.epp.internal.logging.aeri.ide.server.mars.IO.saveConfiguration(IO.java:79)
+	at org.eclipse.epp.internal.logging.aeri.ide.server.mars.IO.downloadDatabase(IO.java:178)
+	at org.eclipse.epp.internal.logging.aeri.ide.server.mars.ServerProblemsHistory$UpdateIndexJob.run(ServerProblemsHistory.java:279)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:55)
+Caused by: java.io.FileNotFoundException: /Users/salomon/Documents/ProgTeam/.metadata/.plugins/org.eclipse.epp.logging.aeri.ide/org.eclipse.epp.logging.aeri.ide.server/server-config.json (No such file or directory)
+	at java.io.FileOutputStream.open0(Native Method)
+	at java.io.FileOutputStream.open(FileOutputStream.java:270)
+	at java.io.FileOutputStream.<init>(FileOutputStream.java:213)
+	at java.io.FileOutputStream.<init>(FileOutputStream.java:162)
+	at org.eclipse.epp.internal.logging.aeri.ide.server.json.Json.serialize(Json.java:127)
+	... 4 more
